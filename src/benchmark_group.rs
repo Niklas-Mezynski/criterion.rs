@@ -92,10 +92,10 @@ impl<'a, M: Measurement> BenchmarkGroup<'a, M> {
     ///
     /// # Panics
     ///
-    /// Panics if n < 1.
+    /// Panics if n < 2.
     pub fn sample_size(&mut self, n: usize) -> &mut Self {
         // I also want to allow benchmarks with sample size 1!
-        assert!(n >= 1);
+        assert!(n >= 2);
 
         self.partial_config.sample_size = Some(n);
         self
